@@ -81,7 +81,7 @@ app.get('/email', async (req, res) => {
                     to: email,
                     subject: subject,
                     text: `teste`,
-                    html: `<p>${message}</p> <img src="${info.attachmentURL}" width="auto" height="auto"> `
+                    html: `<p>${message}</p> <img src="${info.attachmentURL}" width="auto" height="auto"> <br> ${info.attachmentURL2} `
 
                 });
 
@@ -133,7 +133,7 @@ app.get('/teste', async (req, res) => {
                         to: email_teste, // Assuming email is a property in the user document
                         subject: subject.replace('usuario', 'nome'),
                         text: `teste`,
-                        html: `<p>${message}</p> <img src="${info.attachmentURL}" width="auto" height="auto"> `
+                        html: `<p>${message}</p> <img src="${info.attachmentURL}" width="auto" height="auto"> <br> ${info.attachmentURL2} `
                     });
                     console.log(`Email Enviado para (${email_teste})`);
 
