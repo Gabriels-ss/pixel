@@ -77,11 +77,12 @@ app.get('/email', async (req, res) => {
 
                 // Enviar e-mail personalizado para cada usuário
                 const emailInfo = await transporter.sendMail({
-                    from: '"👻" <gabrielsousa20070411@gmail.com>',
+                    from: '" Level marketing "<gabrielsousa20070411@gmail.com>',
                     to: email,
                     subject: subject,
                     text: `teste`,
-                    html: `<img src=".03" width="1" height="1"> <p>${message} <br> ${info.attachment} </p>`
+                    html: `<p>${message}</p> <img src="${info.attachmentURL}" width="auto" height="auto"> `
+
                 });
 
                 console.log(`Email Enviado para ${nome} (${email})`);
@@ -132,7 +133,7 @@ app.get('/teste', async (req, res) => {
                         to: email_teste, // Assuming email is a property in the user document
                         subject: subject.replace('usuario', 'nome'),
                         text: `teste`,
-                        html: `<img src=".03" width="1" height="1"> <p>${message} <br> ${attachment} </p>`
+                        html: `<p>${message}</p> <img src="${info.attachmentURL}" width="auto" height="auto"> `
                     });
                     console.log(`Email Enviado para (${email_teste})`);
 
